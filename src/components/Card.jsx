@@ -15,8 +15,7 @@ export default function Card({image,name,orignalPrice,discountedPrice,discount,r
   
   const handleClick=()=>{
    dispatch(addProduct(array))
-    const {quantity}=carts
-    console.log(quantity)
+  
   }
 
    

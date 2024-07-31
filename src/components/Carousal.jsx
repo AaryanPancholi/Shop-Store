@@ -8,7 +8,7 @@ import img4 from '../assets/logo1.png'
  const Carousal = () => {
   return (
     <div className='mt-10'>
-    <CCarousel controls  indicators interval={2000} className='text-black'>
+    <CCarousel controls  indicators interval={1000} className='text-black'>
   <CCarouselItem>
     <CImage className="d-block w-[100vw] h-[70vh]" src={img1} alt="slide 1" />
   </CCarouselItem>

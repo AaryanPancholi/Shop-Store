@@ -1,4 +1,4 @@
-import React, { useState ,useRef} from 'react'
+import React, { useState ,useRef,useEffect} from 'react'
 import ShoppingCart from './ShoppingCart'
 import { setCartSlice,addProduct } from '../redux/createSlice/cart.Slice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,11 +17,15 @@ export default function CartProuduct() {
   const handleOrder=()=>{
     setText("Order Placed Sucessfully")
     dispatch(setCartSlice([]))
+        localStorage.setItem('carts', JSON.stringify([]));
+          
+      
     scrollContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' })
     setTimeout(()=>{
       setText("No Products Added To Cart")
     },10000)
   }
+ 
   
   return (
     <div className=''>

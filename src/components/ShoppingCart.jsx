@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { useSelector,useDispatch } from 'react-redux';
 import { setCartSlice } from '../redux/createSlice/cart.Slice';
 import img from '../assets/product_7.png'
@@ -20,16 +20,22 @@ export default function ShoppingCart({imgs,name,discountedPrice}) {
   const removeHandler=(name)=>{
     const newCart=cart.filter((item)=>
       item.name!==name
+   
 
     )
    
-  dispatch(setCartSlice([...newCart]))}
+  dispatch(setCartSlice([...newCart]))
+ if (newCart.length==0){
+  localStorage.setItem('carts', JSON.stringify([]));
+ }
+  }
  const handleQuantity=(quant)=>{
   setQuantity(quant);
   
-   
   
     dispatch(setCartSlice(cart.map((item) => item.name === name? {...item, quantity: quant } : item)))}; 
+   
+    localStorage.setItem('carts', JSON.stringify(cart));
 
   
 
