@@ -37,7 +37,7 @@ export const Navbar = () => {
           <div className="relative">
             <p style={{display:!items&&"none"}} className='bg-red-500 w-6 h-6  text-center rounded-full absolute text-white -left-2 -top-2'>{items
               }</p>
-          <NavLink to='/Cart' activeClassName="active-cart">
+          <NavLink to='/Cart' >
 
             <FaBagShopping className="text-2xl" />
             <p className="hover:underline">Cart</p>

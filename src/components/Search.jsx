@@ -13,7 +13,7 @@ export default function Search() {
     const Women=useSelector((state)=> state.WomensCloth.value)
     const Genral=useSelector((state)=> state.Genral.value)
   const allData= useMemo(()=>{ return [...men,...Women,...Genral]},[men,Women,Genral])
-  console.log(allData)
+  
 filteredData=useMemo(()=>{
   if(value.length>0){
     
@@ -27,7 +27,7 @@ filteredData=useMemo(()=>{
 
 
   },[allData,value])
-  console.log(filteredData)
+
   const divRef = useRef(null);
 
   const handleBlur = () => {
